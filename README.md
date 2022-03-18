@@ -1,3 +1,4 @@
+Bugs conhecidos
 Known bugs
 
 Há um bug que sinaliza duas letras certas em lugares errados mesmo tendo apenas uma.
