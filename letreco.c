@@ -63,7 +63,9 @@ int checar_letra_na_palavra(char *palavra, char letra)
   while (palavra[i])
   {
     if (palavra[i] == letra)
+    {
       return 1;
+    }
     i++;
   }
 
