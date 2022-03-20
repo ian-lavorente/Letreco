@@ -3,3 +3,6 @@ festa
 barco
 navio
 laudo
+malha
+farpa
+cinco
