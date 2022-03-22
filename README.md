@@ -1,3 +1,15 @@
+Instruções
+
+Instructions
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Instale o jogo e o arquivo palavras.txt, compile o jogo e rode-o.
+
+Install the game and the palavras.txt, compile the game and run it.
+
+========================================================================================================================================================
+
 Bugs conhecidos
 
 Known bugs
