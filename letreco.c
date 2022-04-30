@@ -106,21 +106,20 @@ Thiago Paiva
 
 void banner()
 {
-  printf(" ------------------------------------------------- \n");
-  printf("|         ____ _______  ___   ____  ____  ____    |\n  ");
-  printf("|  |     |        |    |   | |     |     |    |   |\n  ");
-  printf("|  |     |____    |    |___| |____ |     |    |   |\n  ");
-  printf("|  |     |        |    | \\   |     |     |    |   |\n ");
-  printf("|  |____ |____    |    |  \\  |____ |____ |____|   |\n ");
-  printf("|                                                 |\n  ");
-  printf(" ------------------------------------------------- \n");
-
-  printf("Bem-vindo ao Letreco, logo abaixo estão as regras do jogo.\n\n");
-  printf("Os símbolos representam as letras, como por exemplo:\n");
-  printf("# (cerquilha) representa que a letra não existe na palavra.\n");
-  printf("+ (adição) significa que a letra existe na palavra, porém está na posição errada.\n");
-  printf("O jogador tem 5 tentativas para tentar acertar a palavra correta. Todas as palavras estão limitadas a 5 letras\n\n");
-  printf("Boa sorte e bom jogo!\n");
+  printf("\n ------------------------------------------------- ");
+  printf("\n|         ____ _______  ___   ____  ____  ____    |");
+  printf("\n|  |     |        |    |   | |     |     |    |   |");
+  printf("\n|  |     |____    |    |___| |____ |     |    |   |");
+  printf("\n|  |     |        |    | \\   |     |     |    |   |");
+  printf("\n|  |____ |____    |    |  \\  |____ |____ |____|   | ");
+  printf("\n|                                                 |  ");
+  printf("\n ------------------------------------------------- ");
+  printf("\n");
+  printf("\nRegras:");
+  printf("\n# (cerquilha) representa que a letra não existe na palavra.");
+  printf("\n+ (adição) significa que a letra existe na palavra, porém está na posição errada.");
+  printf("\nHá cinco tentativas para acertar a palavra correta."); 
+  printf("\nTodas as palavras estão limitadas a cinco letras.\n");
 }
 
 int checar_tamanho_da_palavra(char *palavra)
@@ -241,11 +240,11 @@ int main()
   {
     ver_mascara_da_palavra(mascaraP);
     ver_mascara_da_matriz(matriz_de_palavras);
-    printf("Escreva uma palavra: \n");
+    printf("\nEscreva uma palavra: ");
     scanf("%s", palavra);
     if (checar_tamanho_da_palavra(palavra) != 5)
     {
-      printf("Número de letras diferente de cinco!\n");
+      printf("\nNúmero de letras diferente de cinco!");
       continue;
     }
     else
@@ -254,7 +253,7 @@ int main()
 
       if (cont == tamanho_real_da_palavra)
       {
-        printf("Parabéns, você acertou! A palavra era: \"%s\".\n", palavra_do_jogo);
+        printf("\nParabéns, você acertou! A palavra era: \"%s\".\n", palavra_do_jogo);
         printf("Quantidade de tentativas: %d\n", tentativas_usadas);
         break;
       }
