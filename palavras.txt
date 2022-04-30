@@ -6,3 +6,5 @@ laudo
 malha
 farpa
 cinco
+ferro
+trave
