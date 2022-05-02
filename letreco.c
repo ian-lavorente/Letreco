@@ -119,7 +119,8 @@ void banner()
   printf("\n# (cerquilha) representa que a letra não existe na palavra.");
   printf("\n+ (adição) significa que a letra existe na palavra, porém está na posição errada.");
   printf("\nHá cinco tentativas para acertar a palavra correta."); 
-  printf("\nTodas as palavras estão limitadas a cinco letras.\n");
+  printf("\nTodas as palavras estão limitadas a cinco letras.");
+  printf("\n");
 }
 
 int checar_tamanho_da_palavra(char *palavra)
@@ -136,7 +137,8 @@ int checar_tamanho_da_palavra(char *palavra)
 
 void ver_mascara_da_palavra(char palavra[])
 {
-  printf("\n ------------------------------------------------ \n");
+  printf("\n ------------------------------------------------ ");
+  printf("\n");
   printf("|");
 
   for (int i = 0; i < tamanho_real_da_palavra; i++)
@@ -218,7 +220,7 @@ Guilherme Alves
 Ian Lavorente
 */
 
-int main()
+main()
 {
   char palavra_do_jogo[tamanho_da_palavra] = "";
   char *palavra_do_jogoP;
@@ -253,8 +255,9 @@ int main()
 
       if (cont == tamanho_real_da_palavra)
       {
-        printf("\nParabéns, você acertou! A palavra era: \"%s\".\n", palavra_do_jogo);
-        printf("Quantidade de tentativas: %d\n", tentativas_usadas);
+        printf("\nParabéns, você acertou! A palavra era: \"%s\".", palavra_do_jogo);
+        printf("\nQuantidade de tentativas: %d", tentativas_usadas);
+        printf("\n");
         break;
       }
       preencher_linha(matriz_de_palavras, palavra_do_jogoP, palavra, tentativas_usadas - 1);
@@ -263,6 +266,4 @@ int main()
     numero_de_tentativas--;
     tentativas_usadas++;
   }
-
-  return 0;
 }
