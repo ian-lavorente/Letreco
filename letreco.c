@@ -220,7 +220,7 @@ Guilherme Alves
 Ian Lavorente
 */
 
-main()
+int main()
 {
   char palavra_do_jogo[tamanho_da_palavra] = "";
   char *palavra_do_jogoP;
@@ -266,4 +266,6 @@ main()
     numero_de_tentativas--;
     tentativas_usadas++;
   }
+  
+  return 0;
 }
