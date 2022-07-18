@@ -44,7 +44,7 @@ void gerar_palavra_aleatoria(char *palavra_do_jogo)
 /*Grupo 2*/
 
 /*Karolyne Muniz*/
-/*Maria Luiza*/
+/*Maria Luiza Passos*/
 /*Luiz Henrique*/
 /*Alice Akaki*/
 
@@ -79,7 +79,7 @@ void preencher_linha(char matriz[][tamanho_real_da_palavra], char *palavra_do_jo
 
 /*Grupo 4*/
 
-/*João Pedro*/
+/*João Pedro Magalhães*/
 /*João Guilherme*/
 /*Bruno McPherson*/
 /*Thiago Paiva*/
