@@ -146,10 +146,8 @@ int comparar_palavra(char *letreco, char *mascara, char *palavra)
 
 void preencher_mascara_da_matriz(char matriz[][tamanho_real_da_palavra])
 {
-  for (int i = 0; i < tamanho_real_da_palavra; i++)
-  {
-    for (int j = 0; j < tamanho_real_da_palavra; j++)
-    {
+  for (int i = 0; i < tamanho_real_da_palavra; i++) {
+    for (int j = 0; j < tamanho_real_da_palavra; j++) {
       matriz[i][j] = '_';
     }
   }
