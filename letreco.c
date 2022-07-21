@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 #define tamanho_da_palavra 6
 #define tamanho_real_da_palavra tamanho_da_palavra - 1
