@@ -189,7 +189,7 @@ int main()
   char matriz_de_palavras[tamanho_real_da_palavra][tamanho_real_da_palavra] = {};
   char palavra[tamanho_da_palavra] = "";
   banner();
-  printf("\n ");
+  printf("\n");
   gerar_palavra_aleatoria(palavra_do_jogoP);
   preencher_mascara_da_matriz(matriz_de_palavras);
   while (numero_de_tentativas > 0) {
