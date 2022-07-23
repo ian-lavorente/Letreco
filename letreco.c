@@ -15,7 +15,7 @@
 int sortear_numero(int min, int max)
 {
   srand(time(NULL));
-  return rand() % (max + 1 - min) + min;
+  return (rand() % ((max + 1) - min));
 }
 
 int contar_quantidade_de_palavras_no_arquivo()
