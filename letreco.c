@@ -146,8 +146,8 @@ int comparar_palavra(char *letreco, char *mascara, char *palavra)
 void preencher_mascara_da_matriz(char matriz[][tamanho_da_palavra])
 {
   int i, j;
-  for (i = 0; i < tamanho_real_da_palavra; i++) {
-    for (j = 0; j < tamanho_real_da_palavra; j++) {
+  for (i = 0; i < tamanho_da_palavra; i++) {
+    for (j = 0; j < tamanho_da_palavra; j++) {
       matriz[i][j] = '_';
     }
   }
@@ -160,9 +160,9 @@ void ver_mascara_da_matriz(char matriz[][tamanho_da_palavra])
 {
   int i, j;
 
-  for (i = 0; i < tamanho_real_da_palavra; i++) {
+  for (i = 0; i < tamanho_da_palavra; i++) {
     printf("\t");
-    for (j = 0; j < tamanho_real_da_palavra; j++) {
+    for (j = 0; j < tamanho_da_palavra; j++) {
       printf("[%c] ", matriz[i][j]);
     }
     printf("\n");
@@ -201,7 +201,7 @@ int main()
       continue;
     } else {
       int cont = comparar_palavra(palavra_do_jogo, mascara, palavra);
-      if (cont == tamanho_real_da_palavra) {
+      if (cont == tamanho_da_palavra) {
         printf("\nParabéns, você acertou! A palavra era: \"%s\".", palavra_do_jogo);
         printf("\nQuantidade de tentativas: %d", tentativas_usadas);
         printf("\n");
