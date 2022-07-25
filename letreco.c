@@ -95,7 +95,6 @@ void banner()
   printf("\nRegras:");
   printf("\n# (cerquilha) representa que a letra não existe na palavra.");
   printf("\n+ (adição) significa que a letra existe na palavra, porém está na posição errada.");
-  printf("\nHá cinco tentativas para acertar uma palavra de cinco letras."); 
   printf("\nBom jogo!");
 }
 
