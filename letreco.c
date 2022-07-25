@@ -33,12 +33,13 @@ int contar_quantidade_de_palavras_no_arquivo()
 
 void gerar_palavra_aleatoria(char *palavra_do_jogo)
 {
+  int i;
   int quantidade_de_palavras_no_arquivo = contar_quantidade_de_palavras_no_arquivo();
   int numero_aleatorio = sortear_numero(1, quantidade_de_palavras_no_arquivo);
   FILE *arquivo = fopen(nome_do_arquivo, "r");
 
   rewind(arquivo);
-  for (int i = 0; i < numero_aleatorio; i++) {
+  for (i = 0; i < numero_aleatorio; i++) {
     fscanf(arquivo, "%s", palavra_do_jogo);
   }
   fclose(arquivo);
