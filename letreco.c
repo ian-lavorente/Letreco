@@ -115,7 +115,7 @@ void ver_mascara_da_palavra(char palavra[])
   printf("\n ------------------------------------------------ ");
   printf("\n");
   printf("|");
-  for (i = 0; i < tamanho_real_da_palavra; i++) {
+  for (i = 0; i < tamanho_da_palavra; i++) {
     printf("\t%c ", palavra[i]);
   }
   printf("       |");
@@ -134,7 +134,7 @@ int comparar_palavra(char *letreco, char *mascara, char *palavra)
 {
   int i;
   int cont = 0;
-  for (i = 0; i < tamanho_real_da_palavra; i++) {
+  for (i = 0; i < tamanho_da_palavra; i++) {
     if (letreco[i] == palavra[i]) {
       mascara[i] = letreco[i];
       cont++;
