@@ -127,11 +127,11 @@ void ver_mascara_da_palavra(char palavra[])
 /*Deivison Lima*/
 /*Gustavo Klosinski*/
 
-int comparar_palavra(char *letreco, char *mascara, char *palavra)
+int comparar_palavra(char *letreco, char *mascara, char *palavra_do_usuario)
 {
   int cont = 0;
   for (int i = 0; i < tamanho_da_palavra; i++) {
-    if (letreco[i] == palavra[i]) {
+    if (palavra_do_jogo[i] == palavra_do_usuario[i]) {
       mascara[i] = letreco[i];
       cont++;
     }
@@ -200,7 +200,7 @@ int main()
         printf("\n");
         break;
       }
-      preencher_linha(matriz_de_palavras, palavra_do_jogoP, palavra, tentativas_usadas - 1);
+      preencher_linha(matriz_de_palavras, palavra_do_jogoP, palavra, (tentativas_usadas - 1));
     }
     numero_de_tentativas--;
     tentativas_usadas++;
