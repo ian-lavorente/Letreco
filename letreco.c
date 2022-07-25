@@ -1,12 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define tamanho_da_palavra 6
-#define tamanho_real_da_palavra tamanho_da_palavra - 1
+#define tamanho_da_palavra 5
 #define nome_do_arquivo "palavras.txt"
 
 /*Grupo 1*/
-
 /*Anderson da Silva*/
 /*Gustavo Alves*/
 /*Tiago Gabriel*/
@@ -23,7 +21,6 @@ int contar_quantidade_de_palavras_no_arquivo()
   int numero_de_palavras = 0;
   char palavra[tamanho_da_palavra];
   FILE *arquivo = fopen(nome_do_arquivo, "r");
-
   while (fscanf(arquivo, "%s", palavra) != EOF) {
     numero_de_palavras++;
   }
@@ -31,22 +28,20 @@ int contar_quantidade_de_palavras_no_arquivo()
   return numero_de_palavras;
 }
 
-void gerar_palavra_aleatoria(char *palavra_do_jogo)
+void gerar_palavra_aleatoria(char *palavra)
 {
   int i;
   int quantidade_de_palavras_no_arquivo = contar_quantidade_de_palavras_no_arquivo();
   int numero_aleatorio = sortear_numero(1, quantidade_de_palavras_no_arquivo);
   FILE *arquivo = fopen(nome_do_arquivo, "r");
-
   rewind(arquivo);
   for (i = 0; i < numero_aleatorio; i++) {
-    fscanf(arquivo, "%s", palavra_do_jogo);
+    fscanf(arquivo, "%s", palavra);
   }
   fclose(arquivo);
 }
 
 /*Grupo 2*/
-
 /*Karolyne Muniz*/
 /*Maria Luiza Passos*/
 /*Luiz Henrique*/
@@ -55,7 +50,6 @@ void gerar_palavra_aleatoria(char *palavra_do_jogo)
 int checar_letra_na_palavra(char *palavra, char letra)
 {
   int i = 0;
-
   while (palavra[i]) {
     if (palavra[i] == letra) {
       return 1;
@@ -65,10 +59,9 @@ int checar_letra_na_palavra(char *palavra, char letra)
   return 0;
 }
 
-void preencher_linha(char matriz[][tamanho_real_da_palavra], char *palavra_do_jogo, char *palavra_do_usuario, int linha)
+void preencher_linha(char matriz[][tamanho_da_palavra], char *palavra_do_jogo, char *palavra_do_usuario, int linha)
 {
   int i = 0;
-
   while (palavra_do_jogo[i]) {
     if (palavra_do_jogo[i] == palavra_do_usuario[i]) {
       matriz[linha][i] = palavra_do_usuario[i];
@@ -84,7 +77,6 @@ void preencher_linha(char matriz[][tamanho_real_da_palavra], char *palavra_do_jo
 }
 
 /*Grupo 4*/
-
 /*João Pedro Magalhães*/
 /*João Guilherme*/
 /*Bruno McPherson*/
@@ -111,7 +103,6 @@ void banner()
 int checar_tamanho_da_palavra(char *palavra)
 {
   int i = 0;
-
   while (palavra[i] != '\0') {
     i++;
   }
@@ -121,7 +112,6 @@ int checar_tamanho_da_palavra(char *palavra)
 void ver_mascara_da_palavra(char palavra[])
 {
   int i;
-
   printf("\n ------------------------------------------------ ");
   printf("\n");
   printf("|");
@@ -135,7 +125,6 @@ void ver_mascara_da_palavra(char palavra[])
 }
 
 /*Grupo 5*/
-
 /*Sandy Campos*/
 /*Gabriel Sérgio*/
 /*Deivison Lima*/
@@ -145,7 +134,6 @@ int comparar_palavra(char *letreco, char *mascara, char *palavra)
 {
   int i;
   int cont = 0;
-
   for (i = 0; i < tamanho_real_da_palavra; i++) {
     if (letreco[i] == palavra[i]) {
       mascara[i] = letreco[i];
@@ -155,10 +143,9 @@ int comparar_palavra(char *letreco, char *mascara, char *palavra)
   return cont;
 }
 
-void preencher_mascara_da_matriz(char matriz[][tamanho_real_da_palavra])
+void preencher_mascara_da_matriz(char matriz[][tamanho_da_palavra])
 {
   int i, j;
-
   for (i = 0; i < tamanho_real_da_palavra; i++) {
     for (j = 0; j < tamanho_real_da_palavra; j++) {
       matriz[i][j] = '_';
@@ -167,10 +154,9 @@ void preencher_mascara_da_matriz(char matriz[][tamanho_real_da_palavra])
 }
 
 /*Extra*/
-
 /*William Cardoso*/
 
-void ver_mascara_da_matriz(char matriz[][tamanho_real_da_palavra])
+void ver_mascara_da_matriz(char matriz[][tamanho_da_palavra])
 {
   int i, j;
 
@@ -184,7 +170,6 @@ void ver_mascara_da_matriz(char matriz[][tamanho_real_da_palavra])
 }
 
 /*Grupo 3*/
-
 /*Gabriel Barros*/
 /*Kauã Reydisson*/
 /*Guilherme Alves*/
@@ -201,8 +186,7 @@ int main()
   char mascara[tamanho_da_palavra] = "_____";
   char *mascaraP;
   mascaraP = mascara;
-  char matriz_da_palavra[tamanho_real_da_palavra][tamanho_real_da_palavra] = {};
-
+  char matriz_da_palavra[tamanho_da_palavra][tamanho_da_palavra] = {};
   banner();
   printf("\n");
   gerar_palavra_aleatoria(palavra_do_jogoP);
