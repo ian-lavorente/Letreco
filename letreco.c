@@ -132,7 +132,7 @@ int comparar_palavra(char *palavra_do_jogo, char *mascara, char *palavra_do_usua
   int cont = 0;
   for (int i = 0; i < tamanho_da_palavra; i++) {
     if (palavra_do_jogo[i] == palavra_do_usuario[i]) {
-      mascara[i] = letreco[i];
+      mascara[i] = palavra_do_jogo[i];
       cont++;
     }
   }
