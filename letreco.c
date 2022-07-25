@@ -30,12 +30,11 @@ int contar_quantidade_de_palavras_no_arquivo()
 
 void gerar_palavra_aleatoria(char *palavra)
 {
-  int i;
   int quantidade_de_palavras_no_arquivo = contar_quantidade_de_palavras_no_arquivo();
   int numero_aleatorio = sortear_numero(1, quantidade_de_palavras_no_arquivo);
   FILE *arquivo = fopen(nome_do_arquivo, "r");
   rewind(arquivo);
-  for (i = 0; i < numero_aleatorio; i++) {
+  for (int i = 0; i < numero_aleatorio; i++) {
     fscanf(arquivo, "%s", palavra);
   }
   fclose(arquivo);
@@ -96,8 +95,8 @@ void banner()
   printf("\nRegras:");
   printf("\n# (cerquilha) representa que a letra não existe na palavra.");
   printf("\n+ (adição) significa que a letra existe na palavra, porém está na posição errada.");
-  printf("\nHá cinco tentativas para acertar a palavra correta."); 
-  printf("\nTodas as palavras estão limitadas a cinco letras.");
+  printf("\nHá cinco tentativas para acertar uma palavra de cinco letras."); 
+  printf("\nBom jogo!");
 }
 
 int checar_tamanho_da_palavra(char *palavra)
@@ -111,11 +110,10 @@ int checar_tamanho_da_palavra(char *palavra)
 
 void ver_mascara_da_palavra(char palavra[])
 {
-  int i;
   printf("\n ------------------------------------------------ ");
   printf("\n");
   printf("|");
-  for (i = 0; i < tamanho_da_palavra; i++) {
+  for (int i = 0; i < tamanho_da_palavra; i++) {
     printf("\t%c ", palavra[i]);
   }
   printf("       |");
@@ -132,9 +130,8 @@ void ver_mascara_da_palavra(char palavra[])
 
 int comparar_palavra(char *letreco, char *mascara, char *palavra)
 {
-  int i;
   int cont = 0;
-  for (i = 0; i < tamanho_da_palavra; i++) {
+  for (int i = 0; i < tamanho_da_palavra; i++) {
     if (letreco[i] == palavra[i]) {
       mascara[i] = letreco[i];
       cont++;
@@ -145,9 +142,8 @@ int comparar_palavra(char *letreco, char *mascara, char *palavra)
 
 void preencher_mascara_da_matriz(char matriz[][tamanho_da_palavra])
 {
-  int i, j;
-  for (i = 0; i < tamanho_da_palavra; i++) {
-    for (j = 0; j < tamanho_da_palavra; j++) {
+  for (int i = 0; i < tamanho_da_palavra; i++) {
+    for (int j = 0; j < tamanho_da_palavra; j++) {
       matriz[i][j] = '_';
     }
   }
@@ -158,11 +154,9 @@ void preencher_mascara_da_matriz(char matriz[][tamanho_da_palavra])
 
 void ver_mascara_da_matriz(char matriz[][tamanho_da_palavra])
 {
-  int i, j;
-
-  for (i = 0; i < tamanho_da_palavra; i++) {
+  for (int i = 0; i < tamanho_da_palavra; i++) {
     printf("\t");
-    for (j = 0; j < tamanho_da_palavra; j++) {
+    for (int j = 0; j < tamanho_da_palavra; j++) {
       printf("[%c] ", matriz[i][j]);
     }
     printf("\n");
