@@ -23,6 +23,7 @@ int contar_quantidade_de_palavras_no_arquivo()
   int numero_de_palavras = 0;
   char palavra[tamanho_da_palavra];
   FILE *arquivo = fopen(nome_do_arquivo, "r");
+
   while (fscanf(arquivo, "%s", palavra) != EOF) {
     numero_de_palavras++;
   }
@@ -35,6 +36,7 @@ void gerar_palavra_aleatoria(char *palavra_do_jogo)
   int quantidade_de_palavras_no_arquivo = contar_quantidade_de_palavras_no_arquivo();
   int numero_aleatorio = sortear_numero(1, quantidade_de_palavras_no_arquivo);
   FILE *arquivo = fopen(nome_do_arquivo, "r");
+
   rewind(arquivo);
   for (int i = 0; i < numero_aleatorio; i++) {
     fscanf(arquivo, "%s", palavra_do_jogo);
@@ -52,6 +54,7 @@ void gerar_palavra_aleatoria(char *palavra_do_jogo)
 int checar_letra_na_palavra(char *palavra, char letra)
 {
   int i = 0;
+
   while (palavra[i]) {
     if (palavra[i] == letra) {
       return 1;
@@ -64,6 +67,7 @@ int checar_letra_na_palavra(char *palavra, char letra)
 void preencher_linha(char matriz[][tamanho_real_da_palavra], char *palavra_do_jogo, char *palavra_do_usuario, int linha)
 {
   int i = 0;
+
   while (palavra_do_jogo[i]) {
     if (palavra_do_jogo[i] == palavra_do_usuario[i]) {
       matriz[linha][i] = palavra_do_usuario[i];
@@ -106,6 +110,7 @@ void banner()
 int checar_tamanho_da_palavra(char *palavra)
 {
   int i = 0;
+
   while (palavra[i] != '\0') {
     i++;
   }
@@ -114,10 +119,12 @@ int checar_tamanho_da_palavra(char *palavra)
 
 void ver_mascara_da_palavra(char palavra[])
 {
+  int i;
+
   printf("\n ------------------------------------------------ ");
   printf("\n");
   printf("|");
-  for (int i = 0; i < tamanho_real_da_palavra; i++) {
+  for (i = 0; i < tamanho_real_da_palavra; i++) {
     printf("\t%c ", palavra[i]);
   }
   printf("       |");
@@ -135,8 +142,10 @@ void ver_mascara_da_palavra(char palavra[])
 
 int comparar_palavra(char *letreco, char *mascara, char *palavra)
 {
+  int i;
   int cont = 0;
-  for (int i = 0; i < tamanho_real_da_palavra; i++) {
+
+  for (i = 0; i < tamanho_real_da_palavra; i++) {
     if (letreco[i] == palavra[i]) {
       mascara[i] = letreco[i];
       cont++;
@@ -147,8 +156,10 @@ int comparar_palavra(char *letreco, char *mascara, char *palavra)
 
 void preencher_mascara_da_matriz(char matriz[][tamanho_real_da_palavra])
 {
-  for (int i = 0; i < tamanho_real_da_palavra; i++) {
-    for (int j = 0; j < tamanho_real_da_palavra; j++) {
+  int i, j;
+
+  for (i = 0; i < tamanho_real_da_palavra; i++) {
+    for (j = 0; j < tamanho_real_da_palavra; j++) {
       matriz[i][j] = '_';
     }
   }
@@ -160,9 +171,11 @@ void preencher_mascara_da_matriz(char matriz[][tamanho_real_da_palavra])
 
 void ver_mascara_da_matriz(char matriz[][tamanho_real_da_palavra])
 {
-  for (int i = 0; i < tamanho_real_da_palavra; i++) {
+  int i, j;
+
+  for (i = 0; i < tamanho_real_da_palavra; i++) {
     printf("\t");
-    for (int j = 0; j < tamanho_real_da_palavra; j++) {
+    for (j = 0; j < tamanho_real_da_palavra; j++) {
       printf("[%c] ", matriz[i][j]);
     }
     printf("\n");
@@ -183,11 +196,12 @@ int main()
   char palavra_do_jogo[tamanho_da_palavra] = "";
   char *palavra_do_jogoP;
   palavra_do_jogoP = palavra_do_jogo;
+  char palavra[tamanho_da_palavra] = "";
   char mascara[tamanho_da_palavra] = "_____";
   char *mascaraP;
   mascaraP = mascara;
-  char matriz_de_palavras[tamanho_real_da_palavra][tamanho_real_da_palavra] = {};
-  char palavra[tamanho_da_palavra] = "";
+  char matriz_da_palavra[tamanho_real_da_palavra][tamanho_real_da_palavra] = {};
+
   banner();
   printf("\n");
   gerar_palavra_aleatoria(palavra_do_jogoP);
