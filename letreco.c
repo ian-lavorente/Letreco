@@ -10,14 +10,12 @@
 /*Tiago Gabriel*/
 /*Gabrielly Cristine*/
 
-int sortear_numero(int min, int max)
-{
+int sortear_numero(int min, int max) {
   srand(time(NULL));
   return (rand() % (((max + 1) - min) + min));
 }
 
-int contar_quantidade_de_palavras_no_arquivo()
-{
+int contar_quantidade_de_palavras_no_arquivo() {
   int numero_de_palavras = 0;
   char palavra[tamanho_da_palavra];
   FILE *arquivo = fopen(nome_do_arquivo, "r");
@@ -28,8 +26,7 @@ int contar_quantidade_de_palavras_no_arquivo()
   return numero_de_palavras;
 }
 
-void gerar_palavra_aleatoria(char *palavra)
-{
+void gerar_palavra_aleatoria(char *palavra) {
   int quantidade_de_palavras_no_arquivo = contar_quantidade_de_palavras_no_arquivo();
   int numero_aleatorio = sortear_numero(1, quantidade_de_palavras_no_arquivo);
   FILE *arquivo = fopen(nome_do_arquivo, "r");
@@ -46,8 +43,7 @@ void gerar_palavra_aleatoria(char *palavra)
 /*Luiz Henrique*/
 /*Alice Akaki*/
 
-int checar_letra_na_palavra(char *palavra, char letra)
-{
+int checar_letra_na_palavra(char *palavra, char letra) {
   int i = 0;
   while (palavra[i]) {
     if (palavra[i] == letra) {
@@ -58,8 +54,7 @@ int checar_letra_na_palavra(char *palavra, char letra)
   return 0;
 }
 
-void preencher_linha(char matriz[][tamanho_da_palavra], char *palavra_do_jogo, char *palavra_do_usuario, int linha)
-{
+void preencher_linha(char matriz[][tamanho_da_palavra], char *palavra_do_jogo, char *palavra_do_usuario, int linha) {
   int i = 0;
   while (palavra_do_jogo[i]) {
     if (palavra_do_jogo[i] == palavra_do_usuario[i]) {
@@ -81,8 +76,7 @@ void preencher_linha(char matriz[][tamanho_da_palavra], char *palavra_do_jogo, c
 /*Bruno McPherson*/
 /*Thiago Paiva*/
 
-void banner()
-{
+void banner() {
   printf("\n ------------------------------------------------- ");
   printf("\n|         ____ _______  ___   ____  ____  ____    |");
   printf("\n|  |     |        |    |   | |     |     |    |   |");
@@ -98,8 +92,7 @@ void banner()
   printf("\nBom jogo!");
 }
 
-int checar_tamanho_da_palavra(char *palavra)
-{
+int checar_tamanho_da_palavra(char *palavra) {
   int i = 0;
   while (palavra[i] != '\0') {
     i++;
@@ -107,8 +100,7 @@ int checar_tamanho_da_palavra(char *palavra)
   return i;
 }
 
-void ver_mascara_da_palavra(char palavra[])
-{
+void ver_mascara_da_palavra(char palavra[]) {
   printf("\n ------------------------------------------------ ");
   printf("\n");
   printf("|");
@@ -127,8 +119,7 @@ void ver_mascara_da_palavra(char palavra[])
 /*Deivison Lima*/
 /*Gustavo Klosinski*/
 
-int comparar_palavra(char *palavra_do_jogo, char *mascara, char *palavra_do_usuario)
-{
+int comparar_palavra(char *palavra_do_jogo, char *mascara, char *palavra_do_usuario) {
   int cont = 0;
   for (int i = 0; i < tamanho_da_palavra; i++) {
     if (palavra_do_jogo[i] == palavra_do_usuario[i]) {
@@ -139,8 +130,7 @@ int comparar_palavra(char *palavra_do_jogo, char *mascara, char *palavra_do_usua
   return cont;
 }
 
-void preencher_mascara_da_matriz(char matriz[][tamanho_da_palavra])
-{
+void preencher_mascara_da_matriz(char matriz[][tamanho_da_palavra]) {
   for (int i = 0; i < tamanho_da_palavra; i++) {
     for (int j = 0; j < tamanho_da_palavra; j++) {
       matriz[i][j] = '_';
@@ -151,8 +141,7 @@ void preencher_mascara_da_matriz(char matriz[][tamanho_da_palavra])
 /*Extra*/
 /*William Cardoso*/
 
-void ver_mascara_da_matriz(char matriz[][tamanho_da_palavra])
-{
+void ver_mascara_da_matriz(char matriz[][tamanho_da_palavra]) {
   for (int i = 0; i < tamanho_da_palavra; i++) {
     printf("\t");
     for (int j = 0; j < tamanho_da_palavra; j++) {
@@ -168,8 +157,7 @@ void ver_mascara_da_matriz(char matriz[][tamanho_da_palavra])
 /*Guilherme Alves*/
 /*Ian Lavorente*/
 
-int main()
-{
+int main() {
   int numero_de_tentativas = 5;
   int tentativas_usadas = 1;
   char palavra_do_jogo[tamanho_da_palavra] = "";
