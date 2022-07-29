@@ -158,8 +158,7 @@ void ver_mascara_da_matriz(char matriz[][tamanho_da_palavra]) {
 /*Ian Lavorente*/
 
 int main() {
-  int numero_de_tentativas = 5;
-  int tentativas_usadas = 1;
+  int numero_de_tentativas = 5, tentativas_usadas = 1;
   char palavra_do_jogo[tamanho_da_palavra] = "";
   char *palavra_do_jogoP;
   palavra_do_jogoP = palavra_do_jogo;
